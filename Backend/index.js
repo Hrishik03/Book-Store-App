@@ -10,16 +10,16 @@ const app = express();
 app.use(express.json());
 
 //middleware for handling CORS policy
-app.use(cors());//allows all origin with default of cors(*)
+// app.use(cors());//allows all origin with default of cors(*)
 
-//middleware to allow custom origins
-// app.use(
-//   cors({
-//     origin: 'https://localhost:3000',
-//     methods: ['GET','PUT','POST','DELETE'],
-//     allowHeaders: ['Content-Type'],
-//   })
-// );
+// middleware to allow custom origins
+app.use(
+  cors({
+    origin: 'book-store-app-backend-sable.vercel.app',
+    methods: ['GET','PUT','POST','DELETE'],
+    allowHeaders: ['Content-Type'],
+  })
+);
 
 app.get("/",(request,response)=>{
     return response.status(234).send("Hello..!!");
