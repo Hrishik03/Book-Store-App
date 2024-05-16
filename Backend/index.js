@@ -15,7 +15,7 @@ app.use(express.json());
 // middleware to allow custom origins
 app.use(
   cors({
-    origin: 'https://book-store-app-ruddy.vercel.app',
+    origin: 'http://localhost:3000',
     methods: ['GET','PUT','POST','DELETE'],
     allowHeaders: ['Content-Type'],
   })
