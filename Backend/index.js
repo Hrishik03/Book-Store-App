@@ -10,16 +10,16 @@ const app = express();
 app.use(express.json());
 
 //middleware for handling CORS policy
-// app.use(cors());//allows all origin with default of cors(*)
+app.use(cors());//allows all origin with default of cors(*)
 
 // middleware to allow custom origins
-app.use(
-  cors({
-    origin: 'http://localhost:3000',
-    methods: ['GET','PUT','POST','DELETE'],
-    allowHeaders: ['Content-Type'],
-  })
-);
+// app.use(
+//   cors({
+//     origin: 'http://localhost:3000',
+//     methods: ['GET','PUT','POST','DELETE'],
+//     allowHeaders: ['Content-Type'],
+//   })
+// );
 
 app.get("/",(request,response)=>{
     return response.status(234).send("Hello..!!");
